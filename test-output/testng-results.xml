@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="18277" started-at="2017-03-09T11:41:00Z" finished-at="2017-03-09T11:41:18Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="18277" started-at="2017-03-09T11:41:00Z" finished-at="2017-03-09T11:41:18Z">
+      <class name="com.guru.script.TestLinkCases">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.guru.script.TestLinkCases@eed359]" name="setUp" is-config="true" duration-ms="12019" started-at="2017-03-09T17:10:48Z" finished-at="2017-03-09T17:11:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testSearchCountry()[pri:0, instance:com.guru.script.TestLinkCases@eed359]" name="testSearchCountry" duration-ms="18247" started-at="2017-03-09T17:11:00Z" finished-at="2017-03-09T17:11:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchCountry -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.guru.script.TestLinkCases@eed359]" name="tearDown" is-config="true" duration-ms="1374" started-at="2017-03-09T17:11:18Z" finished-at="2017-03-09T17:11:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.guru.script.TestLinkCases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

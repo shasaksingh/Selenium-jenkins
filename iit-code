@@ -1,0 +1,129 @@
+
+	public int i=2;
+	public int j=2;
+	public int k=2;
+	public int m=2;
+public String eventName;
+
+	public  String getElementText(String object,String data) throws InterruptedException{
+		APP_LOGS.debug("Clicking on Button");
+		try{
+			String one = "html/body/div[2]/div/div[2]/";
+			String two = "/div/a[1]/span";
+			String three = one + "div[" + i+"]" + two;
+			if(driver.findElement(By.xpath(three))!=null)
+			{
+				String eventName= driver.findElement(By.xpath(three)).getText();
+				System.out.println("Event name is----->"+eventName);
+              }
+			i++;
+			}catch(Exception e){
+			//WebDriverWait wait = new WebDriverWait(driver,30);
+			//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(OR.getProperty(object))));
+
+			return Constants.KEYWORD_FAIL+" -- Unable to get the text";
+			}
+		return  eventName;
+	        }
+
+
+	public  String getEventTime(String object,String data) throws InterruptedException{
+		APP_LOGS.debug("Clicking on Button");
+		try{
+			String one = "html/body/div[2]/div/div[2]/";
+			String two = "/span";
+			String three = one + "div[" + j+"]" + two;
+
+			String s= driver.findElement(By.xpath(three)).getText();
+			System.out.println("Event time is----->"+s);
+
+			j++;
+
+		}catch(Exception e){
+
+
+			WebDriverWait wait = new WebDriverWait(driver,30);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(OR.getProperty(object))));
+
+			return Constants.KEYWORD_FAIL+" -- Unable to click on button";
+
+		}
+		return Constants.KEYWORD_PASS;
+	}
+
+	public  String getEventDescription(String object,String data) throws InterruptedException{
+		APP_LOGS.debug("Clicking on Button");
+		try{
+
+			if(driver.findElement(By.xpath("html/body/div[2]/div/div[1]"))!=null)
+			{
+				String s= driver.findElement(By.xpath("html/body/div[2]/div/div[1]")).getText();
+				System.out.println("Event Description  is----->"+s);
+			}
+			driver.navigate().back();
+		}catch(Exception e){
+			WebDriverWait wait = new WebDriverWait(driver,30);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(OR.getProperty(object))));
+			return Constants.KEYWORD_FAIL+" -- Unable to click on button";
+		}
+		return Constants.KEYWORD_PASS;
+	}
+
+	public  String getEventLocation(String object,String data) throws InterruptedException{
+		APP_LOGS.debug("Clicking on Button");
+		try{
+			String one = "html/body/div[2]/div/div[2]/";
+			String two = "/div/a[1]/span/";
+			String three = one + "div[" + m +"]" + two;
+			String location = driver.findElement(By.xpath(three)).getText();
+			System.out.println("Event location  is----->"+location);
+
+			m++;
+		}catch(Exception e){
+			return Constants.KEYWORD_FAIL+" -- Unable to click on button";
+		}
+		return Constants.KEYWORD_PASS;
+	}
+
+	
+
+	
+	
+	
+	
+
+
+	public  String clickMoreInfo(String object,String data) throws InterruptedException{
+		APP_LOGS.debug("Clicking on Button");
+		try{
+			String one = "html/body/div[2]/div/div[2]/";
+			String two = "/div/a[2]";
+			String three = one + "div[" + k +"]" + two;
+
+			driver.findElement(By.xpath(three)).click();
+
+			k++;
+
+		}catch(Exception e){
+
+			return Constants.KEYWORD_FAIL+" -- Unable to click on button";
+
+		}
+		return Constants.KEYWORD_PASS;
+	}
+
+	public  String getWritername(String object,String data) throws InterruptedException{
+		APP_LOGS.debug("Clicking on Button");
+		try{
+			String s= driver.findElement(By.xpath("html/body/div[2]/div/div[2]/div/span[4]")).getText();
+			String lines[] = s.split("\\r?\\n");
+			for(int i=0;i<lines.length;i++){
+	            System.out.println("Event speakers are--> "+lines[i]);
+	        }
+		}catch(Exception e){
+			WebDriverWait wait = new WebDriverWait(driver,30);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(OR.getProperty(object))));
+			return Constants.KEYWORD_FAIL+" -- Unable to click on button";
+		}
+		return Constants.KEYWORD_PASS;
+	}
